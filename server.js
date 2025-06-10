@@ -16,7 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.route('/').get((req, res) => {
-  res.render('index'); // Renderiza views/pug/index.pug
+  // res.render('index'); // Renderiza views/pug/index.pug //01
+  res.render('index', { title: 'Hello', message: 'Please log in' }); //02
 });
 
 const PORT = process.env.PORT || 3000;
